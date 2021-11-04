@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+// import { json } from "express";
 
 //--openssl-legacy-provider start
 
@@ -11,10 +12,11 @@ function App() {
 
     async function getData() {
       const response = await fetch(
-        "http://hp-api.herokuapp.com/api/characters"
+        "https://hp-api-rhyn.herokuapp.com/characters"
       );
-      const hpData = await response.json();
-      setdata(hpData);
+        const hpData = await response.json();
+        const newHpData = hpData.Items;
+        setdata(newHpData);
     }
   }, []);
 

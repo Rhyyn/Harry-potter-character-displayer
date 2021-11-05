@@ -7,6 +7,20 @@
   pointer-events: none;
 }
 
+.cardBox {
+  width: 20rem;
+  height: auto;
+  border: 1px solid #61dafb;
+}
+
+.cardCharName {
+  font-size: 1.5rem;
+}
+
+.cardCharDesc {
+  font-size: 1rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

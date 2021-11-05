@@ -1,12 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import CharacterCard from './components/CharacterCard'
 // import { json } from "express";
 
 //--openssl-legacy-provider start
 
 function App() {
   const [data, setdata] = useState(null);
-
   useEffect(() => {
     getData();
 
@@ -24,18 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>HP data</h1>
-        {data && (
-          <div>
-            {data.map((data, index) => (
-              <div key={index}>
-                <img alt="temp" className="charImg" src={data.image} />
-                <p>{data.name}</p>
-                <p className="ancestry">{data.ancestry}</p>
-                <p>{data.house}</p>
-              </div>
-            ))}
-          </div>
-        )}
+          <CharacterCard data={[data]}/>
       </header>
     </div>
   );

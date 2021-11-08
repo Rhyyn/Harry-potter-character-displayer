@@ -49,9 +49,10 @@ h1 {
 }
 
 .cardCharName {
-  font-size: 1.5rem;
+  font-size: 120%;
   margin-bottom: 0px;
   padding: 0px 0.5rem;
+  max-height: 32px;
 }
 .cardDesc {
   font-size: 1.1rem;

@@ -1,20 +1,28 @@
 import React from "react";
 
-function CharacterCard(data) {
-  data.data[0].sort(compare);
+function CharacterCard({ data }) {
+  data.Items.sort(compare);
   function compare(a, b) {
     return a.id - b.id;
   }
-    // console.log(data.data[0][0]);
 
   return (
     <div className="cardBox">
-      <h1 className="cardCharName">{data.data[0][0].name}</h1>
-      <img alt={data.data[0][0].name} src={data.data[0][0].image} />
-      <p className="cardCharDesc">Born in: {data.data[0][0].yearOfBirth}</p>
-      <p className="cardCharDesc">{data.data[0][0].ancestry}</p>
-      <p className="cardCharDesc">{data.data[0][0].house}</p>
-      <p className="cardCharDesc">{data.data[0][0].alternate_Names}</p>
+      {data.Items.map((item) => (
+        <div className="uniCard" key={item.id}>
+          <h2 className="cardCharName">{item.name}</h2>
+          <img className="cardCharImage" src={item.image} alt={item.name} />
+          <div className="cardDesc">
+            <p className="cardCharDateOfBirth">
+              Date of Birth: {item.dateOfBirth}
+            </p>
+            <p className="cardCharAncestry">
+              Blood Status: {item.ancestry}
+            </p>
+            <p className="cardCharHouse">House: {item.house}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

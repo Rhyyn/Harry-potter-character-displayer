@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  /* background-color: #162f36; */
+  background-color: white;
 }
 
 .App-logo {
@@ -7,18 +9,70 @@
   pointer-events: none;
 }
 
+h1 {
+  max-width: 30%;
+  border: 1px solid black;
+  margin: 16px auto 0;
+  padding: 1rem;
+  color: black;
+}
+
+
 .cardBox {
-  width: 20rem;
-  height: auto;
-  border: 1px solid #61dafb;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cardBox > div {
+  flex-basis: calc(20% - 40px);
+}
+
+.uniCard {
+  color: white;
+  background-color: #574426;
+  min-width: 15rem;
+  border: 1px solid #2b200d
+  ;
+  border-radius: 12px;
+  margin: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.cardCharImage {
+  padding: 1rem;
+  max-width: 10rem;
+  max-height: 10rem;
+  border-radius: 100%;
 }
 
 .cardCharName {
   font-size: 1.5rem;
+  margin-bottom: 0px;
+  padding: 0px 0.5rem;
+}
+.cardDesc {
+  font-size: 1.1rem;
+  padding-bottom: 1rem;
+}
+.cardDesc > p {
+  margin: 0.1rem;
+  border: 1px solid black;
+  border-radius: 10px 100px / 120px;
 }
 
-.cardCharDesc {
-  font-size: 1rem;
+@media screen and (max-width: 1180px) {
+  h1 {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  h1 {
+    max-width: 70%;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

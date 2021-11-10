@@ -13,14 +13,34 @@ function App() {
         return res.json();
       })
       .then((data) => {
+        data.Items.sort(compare);
+        function compare(a, b) {
+          return a.id - b.id;
+        }
         setData(data);
       });
   }, []);
 
+  // console.log(data.Items[6]);
+
   return (
     <div className="App">
-      <h1>Harry Potter Characters</h1>
-        {data && <CharacterCard data={data} />}
+      <header>
+        <h1>Harry Potter Characters</h1>
+      </header>
+      <div className="cardBox">
+        {data &&
+          data.Items.map((item) => (
+            <CharacterCard
+              key={item.id}
+              charName={item.name}
+              charImage={item.image}
+              charYearOfBirth={item.yearOfBirth}
+              charAncestry={item.ancestry}
+              charHouse={item.house}
+            />
+          ))}
+      </div>
     </div>
   );
 }

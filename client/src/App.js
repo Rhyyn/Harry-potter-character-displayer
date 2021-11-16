@@ -3,49 +3,54 @@ import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
 import SearchBox from "./components/SearchBox";
 
-
 function App() {
   const [data, setData] = useState(null);
-  const [search, setSearch] = useState("");
+  const [userSearch, setUserSearch] = useState("");
 
-// fetch data from API, sort the data then set the data as a State
+  // fetch data from API, sort the data then set the data as a State
   useEffect(() => {
-    fetch("https://hp-api-rhyn.herokuapp.com/characters")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        data.Items.sort(compare);
-        function compare(a, b) {
-          return a.id - b.id;
-        }
-        setData(data);
-      });
+    async function fetchMyApi() {
+      fetch("https://hp-api-rhyn.herokuapp.com/characters")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          data.Items.sort(compare);
+          function compare(a, b) {
+            return a.id - b.id;
+          }
+          setData(data);
+        });
+    }
+    fetchMyApi();
   }, []);
 
-
-// set the user search text to a State then filter data to find whether it matches the userSearch, if yes display all card that matches
+  // set the user search to userSearch state
   const handleChange = (e) => {
-    setSearch(e.target.value);
+    setUserSearch(e.target.value);
   };
-  let searchData = data.Items.filter((item) => {
-      return Object.keys(item).some(key => 
-        item[key].toString().toLowerCase().includes(search.toString().toLowerCase()))
-  });
-
-
 
   return (
     <div className="App">
       <header>
         <h1>Harry Potter Characters</h1>
       </header>
-      <SearchBox handleChange={handleChange.bind(this)} value={search} />
+      <SearchBox handleChange={handleChange.bind(this)} value={userSearch} />
       <div className="cardBox">
         {data &&
-          searchData.map((item) => (
+          data.Items.filter((item) => {
+            if (userSearch === "") { // check if userSearch is empty
+              return item; // if empty return all Data
+            } else if (
+              item.name &&
+              item.name.toLowerCase().includes(userSearch.toLowerCase()) // check if userSearch matches any of the data
+            ) {
+              return item; // if it matches then return Items that matches
+            }
+            return false; // else return false ?
+          }).map((item) => (
             <CharacterCard
-              key={item.id}
+              key={item.id} 
               charName={item.name}
               charImage={item.image}
               charYearOfBirth={item.yearOfBirth}

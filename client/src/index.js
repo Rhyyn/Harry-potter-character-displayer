@@ -4,7 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CharactersPage from "./components/CharactersPage";
+import CharactersPage from "./routes/CharactersPage";
+import Houses from "./routes/Houses"
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -13,6 +15,7 @@ ReactDOM.render(
         {" "}
       </Route>
       <Route path="characters" element={<CharactersPage />}></Route>
+      <Route path="houses" element={<Houses />}></Route>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

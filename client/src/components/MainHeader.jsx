@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ReorderIcon from '@mui/icons-material/Reorder';
 
 const MainHeader = () => {
-  const [showLinks, setShowLinks] = useState(true);
+  const [showLinks, setShowLinks] = useState(false);
   return (
     <header>
       <div className="navBarContainer">
@@ -32,7 +33,7 @@ const MainHeader = () => {
           </nav>
         </div>
 
-        <button className="hamburgerButton">Open</button>
+        <button onClick={() => setShowLinks(!showLinks)} className="hamburgerButton"><ReorderIcon /></button>
       </div>
     </header>
   );

@@ -7,12 +7,12 @@ const MainHeader = () => {
   return (
     <header>
       <div className="navBarContainer">
-        <Link to="/">
+        <Link to="/home">
           <h1 className="brand">HP Characters</h1>
         </Link>
         <div className="navBar" id={showLinks ? "hidden" : ""}>
           <nav id={showLinks ? "move" : ""}>
-            <Link className="linkNav" to="/">
+            <Link className="linkNav" to="/home">
               Home
             </Link>
             <Link className="linkNav" to="/characters">

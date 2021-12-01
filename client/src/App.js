@@ -6,6 +6,7 @@ import CharactersPage from "./routes/CharactersPage";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import Students from "./routes/Students";
+import Staff from "./routes/Staff";
 
 function App() {
   const [data, setData] = useState(null);
@@ -35,6 +36,7 @@ function App() {
         <Route path="characters" element={<CharactersPage data={data}/>}></Route>
         <Route path="houses" element={<Houses />}></Route>
         <Route path="students" element={<Students data={data} />}></Route>
+        <Route path="staff" element={<Staff data={data} />}></Route>
       </Routes>
     </div>
   );

@@ -27,9 +27,9 @@ const CharactersPage = (props) => {
               return item; // if it matches then return Items that matches
             }
             return false; // else return false ?
-          }).map((item) => (
+          }).map((item, index) => (
             <CharacterCard
-              key={item.id}
+              key={index}
               charName={item.name}
               charImage={item.image}
               charYearOfBirth={item.yearOfBirth}

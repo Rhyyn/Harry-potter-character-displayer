@@ -7,10 +7,7 @@ import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import Students from "./routes/Students";
 import Staff from "./routes/Staff";
-import Gryffindor from "./routes/Gryffindor";
-import Slytherin from "./routes/Slytherin";
-import Hufflepuff from "./routes/Hufflepuff";
-import Ravenclaw from "./routes/Ravenclaw";
+import SingleHouses from "./routes/SingleHouses.jsx";
 
 function App() {
   const [data, setData] = useState(null);
@@ -26,6 +23,7 @@ function App() {
           function compare(a, b) {
             return a.id - b.id;
           }
+          // console.log(data);
           setData(data);
         });
     }
@@ -39,7 +37,7 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="characters" element={<CharactersPage data={data}/>}></Route>
         <Route path="houses" element={<Houses />}></Route>
-        <Route path="/houses/Gryffindor" element={<Gryffindor data ={data}/>} />
+        <Route path="/houses/:house" element={<SingleHouses data ={data}/>} />
         <Route path="students" element={<Students data={data} />}></Route>
         <Route path="Staff" element={<Staff data={data}/>}></Route>
       </Routes>

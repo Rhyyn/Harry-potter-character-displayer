@@ -178,74 +178,81 @@ a:active {
   min-width: 17rem;
   max-width: 17rem;
   min-height: 330px;
-  /* border: 2px solid #6e091f; */
-  border-radius: 12px;
+  border: 2px solid #03252b;
+  border-radius: 0px 12px 0px 12px;
   margin: 1rem;
-  transform: scale(0.9);
-  transition: transform 2s;
+  /* transform: scale(1);
+  transition: transform 2s; */
   /* box-shadow: 6px 6px; */
 }
 
 /* Custom borders */
-.uniCard::before {
+/* .cardDesc::before {
   content:'';
-  position: absolute;
+  position: relative;
   background-color: #6e091f;
-  width: 3rem;
+  width: 1.5rem;
   height: 3px;
-  bottom: 0;
-  right: 0;
-  /* border-bottom:1px solid magenta; */
+  bottom: -113px;
+  right: 32px;
+  border-bottom:1px solid magenta; 
 }
 
-.uniCard::after {
+.cardDesc::after {
   content:'';
-  position: absolute;
+  position: relative;
   background-color: #6e091f;
   width: 3px;
-  height: 3rem;
-  bottom: 2px;
-  right:0px;
+  height: 1.5rem;
+  bottom: -15px;
+  right: 32px;
 }
 
 
 .cardCharName::before {
+  
   content:'';
   position: absolute;
   background-color: #6e091f;
-  width:  3rem;
+  width:  1.5rem;
   height: 3px;
-  top: 0;
-  left:0px;
+  top: 5px;
+  left: 5px;
 }
 .cardCharName::after {
   content:'';
   position: absolute;
   background-color: #6e091f;
   width: 3px;
-  height:  3rem;
-  top: 2px;
-  left:0px;
-}
+  height:  1.5rem;
+  top: 5px;
+  left: 5px;
+} */
 /* Custom borders */
 
 
-
-.uniCard:hover {
-  transform: scale(1);
-}
-
 .uniCard:hover > .cardCharImage {
   border: 5px solid #6e091f;
+  background-color: #6e091f;
+  padding: 0px;
+  
+}
+
+.cardDesc::before {
+  content:'';
+  position: absolute;
+  background-color: #6e091f;
+  width: 50%;
+  height: 2px;
+  bottom: 10px;
+  left:25%;
 }
 .cardCharImage {
-  /* padding: 1rem; */
   max-width: 10rem;
   max-height: 10rem;
   border-radius: 50%;
-  background-color: #6e091f;
+  padding: 5px;
   align-self: center;
-
 }
 
 .cardCharName {
@@ -258,9 +265,11 @@ a:active {
   align-self: center;
 }
 .cardDesc {
+  position: relative;
   font-size: 1.1rem;
   padding: 0 0.5rem 1.5rem;
-  margin-top: 10px;
+  margin-top: 20px;
+  min-width: 210px;
   /* box-shadow: 0px -24px 3px -24px white; */
   align-self: center;
   display: flex;
@@ -273,6 +282,12 @@ a:active {
   margin: 0.1rem;
   /* border: 1px solid black;
   border-radius: 10px 100px / 120px; */
+}
+
+.cardCharCrest {
+  max-width: 6rem;
+  margin: 0 auto;
+  /* max-height: 10rem; */
 }
 
 @media only screen and (max-width: 950px) {

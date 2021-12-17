@@ -48,8 +48,34 @@ header {
 
 .home-container {
   background-color: #530a1a;
-  height: 100%;
+  height: 100vh;
 }
+
+.home-image {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.credits-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.credits {
+  color: white;
+  width: 180px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.credits-desc {
+  color: white;
+}
+
+
+
 
 .home-h1 {
   font-size: 1.6rem;
@@ -58,7 +84,7 @@ header {
 
 .home-firstP {
   margin: 0 auto;
-  max-width: 40%;
+  max-width: 60%;
   color: white;
   padding: 2rem;
   line-height: 1.7rem;

@@ -11,7 +11,7 @@ const CharactersPage = (props) => {
   };
 
   return (
-    <div>
+    <div className="charaPages">
       <MainHeader />
       <SearchBox handleChange={handleChange.bind(this)} value={userSearch} />
       <div className="cardBox">

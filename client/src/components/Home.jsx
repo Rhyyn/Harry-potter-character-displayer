@@ -8,7 +8,7 @@ const Home = () => {
       <h1 className="home-h1">
         Welcome to Harry Potter Character Displayer
       </h1>
-      <img src={url} alt="harry image" className="home-image"/>
+      <img src={url} alt="harry" className="home-image"/>
       <p className="home-firstP">
         This is my first personal React Project, it's aim is to help me and
         others quickly look up names of characters of the Harry Potter series

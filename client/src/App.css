@@ -8,6 +8,7 @@ body {
 header {
   display: flex;
   flex-direction: column;
+  display: unset
 }
 
 ::-webkit-scrollbar {
@@ -120,13 +121,18 @@ a:active {
   align-items: center;
   background-color: #6e091f;
   min-height: 66px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  /* width: 100vw; */
+  z-index: 2;
 }
 
 .navBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex;
+  justify-content: space-between; */
+  /* align-items: center; */
+  position: fixed;
+  right: 10px;
   margin-right: 0.7rem;
   white-space: nowrap;
 }
@@ -136,6 +142,12 @@ a:active {
   transform: scale(1.3);
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.button-top-scroll {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 .linkNav {
@@ -347,6 +359,9 @@ a:active {
     display: flex;
     flex-direction: column;
     padding-bottom: 0.8rem;
+  }
+  #hideButton {
+    visibility: hidden;
   }
 
   #hidden {

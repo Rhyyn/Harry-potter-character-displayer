@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ReorderIcon from "@mui/icons-material/Reorder";
+import { GiHamburgerMenu  } from "react-icons/gi";
 import ButtonTopScroll from "../components/ButtonTopScroll";
 
 const MainHeader = () => {
@@ -53,9 +53,9 @@ const MainHeader = () => {
             <Link className="linkNav" to="/staff">
               Staff
             </Link>
-            <Link className="linkNav" to="/contact">
+            {/* <Link className="linkNav" to="/contact">
               Contact Me
-            </Link>
+            </Link> */}
           </nav>
         </div>
         <div className="button-scroll-container" onClick={() => topFunction()}> 
@@ -68,7 +68,7 @@ const MainHeader = () => {
           onClick={() => setShowLinks(!showLinks)}
           className="hamburgerButton"
         >
-          <ReorderIcon />
+          <GiHamburgerMenu color="#ffff" size="1.7rem"/>
         </button>
       </div>
     </header>

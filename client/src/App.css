@@ -196,11 +196,11 @@ a:active {
   background: #530a1a;
 }
 
-.button-top-scroll {
+/* .button-top-scroll {
   position: fixed;
   bottom: 20px;
   right: 20px;
-}
+} */
 
 .linkNav {
   text-decoration: none;
@@ -379,6 +379,23 @@ a:active {
   margin: 0 auto;
   /* max-height: 10rem; */
 }
+
+#hideButton {
+  visibility: hidden;
+}
+
+#showButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #032d33;
+  border: 3px solid #6e091f;
+  border-radius: 12px;
+}
+
+#showButton:hover {
+  cursor: pointer;
+}
 /* 
 @media only screen and (max-height: 850px) {
   .home-container {
@@ -438,9 +455,9 @@ a:active {
     flex-direction: column;
     padding-bottom: 0.8rem;
   }
-  #hideButton {
+  /* #hideButton {
     visibility: hidden;
-  }
+  } */
 
   #hidden {
     position: absolute;

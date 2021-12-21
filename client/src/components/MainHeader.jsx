@@ -1,32 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { GiHamburgerMenu  } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import ButtonTopScroll from "../components/ButtonTopScroll";
 
 const MainHeader = () => {
   const [showLinks, setShowLinks] = useState(false);
   const [showButtn, setShowButtn] = useState(true);
-  const [buttonClassName, setButtonClassName] = useState("");
-  const [buttonId, setButtonId] = useState("");
+  const [currentScroll, setCurrentScroll] = useState(0); // store current scroll state
 
-  window.onscroll = function () { // on user Scroll scrollFunction()
+  window.onscroll = function () {
+    setCurrentScroll(document.documentElement.scrollTop); // onScroll set current scroll state
     scrollFunction();
   };
 
-  function scrollFunction() {
-    if (document.documentElement.scrollTop > 900) {  // if user has scrolled past 900px show button
-      setShowButtn(!showButtn);
-      setButtonClassName("button-top-scroll");
-      setButtonId("");
-    } else if (document.documentElement.scrollTop < 900) { // else if user has not scrolled past 900px hide button
+  const scrollFunction = () => {
+    if (currentScroll < 1200) {
+      // check if user has scrolled more than 1200px if not then true
+      setShowButtn(true);
+    } else if (currentScroll > 1200) {
+      // check if user has scrolled more than 1200px if yes then false
       setShowButtn(false);
-      setButtonId("hideButton");
-      setButtonClassName("");
     }
-  }
+  };
 
-  function topFunction() {  // on user Click go back to the top of the page
-    document.body.scrollTop = 0;   
+  function topFunction() {
+    // on user Click go back to the top of the page
+    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
 
@@ -59,16 +58,13 @@ const MainHeader = () => {
           </nav>
         </div>
         <div className="button-scroll-container" onClick={() => topFunction()}> 
-          <ButtonTopScroll
-            className={buttonClassName}
-            id={buttonId}
-          />
-        </div>
+          <ButtonTopScroll id={showButtn ? "hideButton" : "showButton" /* if showButtn true then hide if false then show */} />
+        </div> 
         <button
           onClick={() => setShowLinks(!showLinks)}
           className="hamburgerButton"
         >
-          <GiHamburgerMenu color="#ffff" size="1.7rem"/>
+          <GiHamburgerMenu color="#ffff" size="1.7rem" />
         </button>
       </div>
     </header>

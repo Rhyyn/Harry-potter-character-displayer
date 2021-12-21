@@ -7,6 +7,7 @@ const SearchBox = (props) => {
         className="search-bar"
         placeholder="Search.."
         type="text"
+        spellcheck="false"
         onChange={props.handleChange}
       ></input>
     </div>

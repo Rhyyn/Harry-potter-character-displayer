@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  background-color: #07353d;
+  background-color: #530a1a;
   font-family: "Roboto", sans-serif;
   cursor: default;
+  height: 100%;
 }
 
 header {
@@ -48,13 +49,32 @@ header {
 }
 
 .home-container {
-  background-color: #530a1a;
+  /* background-color: #530a1a; */
+  background-image: url("../src/images/hogwarts-legacy-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
 }
 
-.home-image {
+.home-container a {
+  text-decoration: none;
+}
+.home-container :visited {
+  color: white;
+}
+.home-container a:hover{
+  color: #032d33;
+}
+
+.home-image { 
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
   max-width: 300px;
-  border-radius: 8px;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  border: 2px solid #530a1a;
 }
 
 .credits-container {
@@ -62,21 +82,54 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .credits {
   color: white;
+  font-size: 3rem;
   width: 180px;
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+  0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 .credits-desc {
+  font-size: 1.8rem;
   color: white;
+  padding-bottom: 1rem;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+  0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 
+.contact-desc {
+  color: white;
+  font-size: 1.8rem;
+  /* margin-bottom: 3rem; */
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+  0px 18px 23px rgba(0, 0, 0, 0.1);
+}
 
+.contact {
+  color: white;
+  font-size: 3rem;
+  width: 180px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+  0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* padding-top: 2rem; */
+}
 
 .home-h1 {
   font-size: 1.6rem;
@@ -96,17 +149,14 @@ h1 {
   margin: 0;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-color: black;
+  -webkit-text-fill-color: white;
 }
 
-a,
+/* a,
 a:link,
-a:visited,
-a:hover,
 a:active {
   text-decoration: none;
-}
+} */
 
 .brand {
   color: white;
@@ -125,6 +175,7 @@ a:active {
   top: 0;
   /* width: 100vw; */
   z-index: 2;
+  border-bottom: 5px solid #530a1a;
 }
 
 .navBar {
@@ -142,6 +193,7 @@ a:active {
   transform: scale(1.3);
   border: 1px solid black;
   border-radius: 5px;
+  background: #530a1a;
 }
 
 .button-top-scroll {
@@ -327,12 +379,38 @@ a:active {
   margin: 0 auto;
   /* max-height: 10rem; */
 }
+/* 
+@media only screen and (max-height: 850px) {
+  .home-container {
+    height: 100vh;
+  }
+} */
+
+@media only screen and (max-width: 595px) {
+  .credits {
+    font-size: 2.5rem;
+  }
+
+  .credits-desc {
+    font-size: 1.5rem;
+  }
+
+  .contact {
+    font-size: 2.5rem;
+  }
+
+  .contact-desc {
+    font-size: 1.5rem;
+  }
+}
 
 @media only screen and (max-width: 950px) {
   .linkNav {
     font-size: 1.4rem;
   }
 }
+
+
 
 @media only screen and (max-width: 875px) {
   .navBar {

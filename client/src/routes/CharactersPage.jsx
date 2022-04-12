@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CharacterCard from "../components/CharacterCard";
 import MainHeader from "../components/MainHeader";
-import SearchBox from "../components/SearchBox";
 
 const CharactersPage = (props) => {
   const [userSearch, setUserSearch] = useState("");
@@ -12,8 +11,7 @@ const CharactersPage = (props) => {
 
   return (
     <div className="charaPages">
-      <MainHeader />
-      <SearchBox handleChange={handleChange.bind(this)} value={userSearch} />
+      <MainHeader handleChange={handleChange} value={setUserSearch} />
       <div className="cardBox">
         {props.data &&
           props.data.filter((item) => {

@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import MainHeader from "../components/MainHeader";
-import SearchBox from "../components/SearchBox";
 import CharacterCard from "../components/CharacterCard";
 
 const Staff = (props) => {
-  const [userSearch, setUserSearcg] = useState("");
+  const [userSearch, setUserSearch] = useState("");
 
   const handleChange = (e) => {
-    setUserSearcg(e.target.value);
+    setUserSearch(e.target.value);
   };
 
   return (
     <div>
-      <MainHeader />
-      <SearchBox handleChange={handleChange.bind(this)} value={userSearch} />
+      <MainHeader handleChange={handleChange} value={userSearch}/>
       <div className="cardBox">
         {props.data &&
           props.data

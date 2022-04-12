@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
-import SearchBox from "../components/SearchBox";
+// import SearchBox from "../components/SearchBox";
 import CharacterCard from "../components/CharacterCard";
 
 const SingleHouses = (props) => {
@@ -14,8 +14,7 @@ const SingleHouses = (props) => {
 
   return (
     <div>
-      <MainHeader />
-      <SearchBox handleChange={handleChange.bind(this)} value={userSearch} />
+      <MainHeader handleChange={handleChange} value={userSearch}/>
       <div className="cardBox">
         {props.data &&
           props.data

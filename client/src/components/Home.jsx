@@ -12,7 +12,7 @@ const Home = () => {
       <div className="credits-container">
         <h2 className="credits">Credits</h2>
         <p className="credits-desc">
-          <a href="https://hp-api.herokuapp.com/">
+          <a href="https://hp-api.herokuapp.com/" className="text-link">
             API from : https://hp-api.herokuapp.com/
           </a>
         </p>

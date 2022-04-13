@@ -33,9 +33,9 @@ const Staff = (props) => {
               }
               return false;
             })
-            .map((item) => (
+            .map((item, index) => (
               <CharacterCard
-                key={item.id}
+                key={index}
                 charName={item.name}
                 charImage={item.image}
                 charYearOfBirth={item.yearOfBirth}

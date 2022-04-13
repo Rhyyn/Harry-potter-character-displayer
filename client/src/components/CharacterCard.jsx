@@ -1,10 +1,4 @@
 import React from "react";
-// import images from "../images/images";
-import gryffindor from "../images/gryffindor.png";
-import hufflepuff from "../images/hufflepuff.png";
-import ravenclaw from "../images/ravenclaw.png";
-import slytherin from "../images/slytherin.png";
-import hpLogo from "../images/hpLogo.png";
 
 const CharacterCard = ({
   charName,
@@ -13,20 +7,14 @@ const CharacterCard = ({
   charAncestry,
   charHouse,
 }) => {
-  let currentHouse = "";
-  if (charHouse === "Gryffindor") {
-    currentHouse = gryffindor;
-  } else if (charHouse === "Ravenclaw") {
-    currentHouse = ravenclaw;
-  } else if (charHouse === "Hufflepuff") {
-    currentHouse = hufflepuff;
-  } else if (charHouse === "Slytherin") {
-    currentHouse = slytherin;
-  } else {
-    currentHouse = hpLogo;
-  }
 
-  // console.log(<img src="../images/gryffindor.png"/>);
+  let currentHouse = "";
+  if (charHouse) { // check if character has house
+    currentHouse = charHouse.toLowerCase() + ".png";
+  } else { // if not fallback to harrypoter Logo
+    currentHouse = "hpLogo.png"
+  }
+  let url = "./img/"
 
   return (
     <div className="uniCard">
@@ -42,7 +30,7 @@ const CharacterCard = ({
         <p className="cardCharHouse">
           House: {charHouse ? charHouse : "Unknown"}
         </p>
-        <img className="cardCharCrest" src={currentHouse} alt="temp" />
+        <img className="cardCharCrest" src={url + currentHouse} alt="temp" />
       </div>
     </div>
   );

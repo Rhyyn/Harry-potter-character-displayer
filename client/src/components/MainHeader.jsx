@@ -7,25 +7,17 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-// import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-// import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import { useState } from "react";
 
+
 const pages = ["Characters", "Houses", "Staff", "Students", "Contact"];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const MainHeader = (props) => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [userSearch, setUserSearch] = useState("");
-
-  const handleChange = (e) => {
-    setUserSearch(e.target.value);
-    console.log(userSearch);
-  };
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,9 +28,13 @@ const MainHeader = (props) => {
   };
 
   const search = () => {
-    return (<SearchBox handleChange={props.handleChange} value={setUserSearch}></SearchBox>)
-  }
-
+    return (
+      <SearchBox
+        handleChange={props.handleChange}
+        value={props.value}
+      ></SearchBox>
+    );
+  };
 
   return (
     <AppBar position="static">
@@ -86,10 +82,7 @@ const MainHeader = (props) => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                >
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography
                     className="text-link"
                     component={Link}
@@ -127,41 +120,9 @@ const MainHeader = (props) => {
             ))}
           </Box>
           <div className="search-box-DIV">{search()}</div>
-
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
 export default MainHeader;
-

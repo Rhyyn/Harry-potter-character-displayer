@@ -54,7 +54,7 @@ header {
 
 .home-container {
   /* background-color: #530a1a; */
-  background-image: url("../src/images/hogwarts-legacy-desktop.jpg");
+  background-image: url("./images/hogwarts-legacy-desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -328,7 +328,6 @@ h1 {
 }
 
 .gryffindor-image {
-  background-image: url("../src/images/gryffindor.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -336,7 +335,6 @@ h1 {
   width: 70%;
 }
 .slytherin-image {
-  background-image: url("../src/images/slytherin.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -344,7 +342,6 @@ h1 {
   width: 70%;
 }
 .hufflepuff-image {
-  background-image: url("../src/images/hufflepuff.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -352,7 +349,6 @@ h1 {
   width: 70%;
 }
 .ravenclaw-image {
-  background-image: url("../src/images/ravenclaw.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;

@@ -7,13 +7,6 @@ html {
   /* height: 100%; */
 }
 
-
-
-.text-link {
-  color: inherit !important;
-  text-decoration: inherit !important;
-
-}
 header {
   display: flex;
   flex-direction: column;
@@ -46,14 +39,17 @@ header {
 
 .App {
   text-align: center;
-  /* background-color: #162f36; */
-  /* background-color: #e5890a; */
   margin: 0;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.text-link {
+  color: inherit !important;
+  text-decoration: inherit !important;
 }
 
 .home-container {
@@ -65,15 +61,6 @@ header {
   height: 100vh;
 }
 
-.home-container a {
-  text-decoration: none;
-}
-.home-container :visited {
-  color: white;
-}
-.home-container a:hover {
-  color: #032d33;
-}
 
 .home-image {
   display: flex;
@@ -135,7 +122,6 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* padding-top: 2rem; */
 }
 
 .home-h1 {
@@ -143,13 +129,6 @@ header {
   padding: 2rem 0 2rem;
 }
 
-.home-firstP {
-  margin: 0 auto;
-  max-width: 60%;
-  color: white;
-  padding: 2rem;
-  line-height: 1.7rem;
-}
 
 h1 {
   font-size: 1.7rem;
@@ -159,94 +138,37 @@ h1 {
   -webkit-text-fill-color: white;
 }
 
-a {
-  text-decoration: none;
+
+.MuiPaper-root {  /* Header background-color */
+  background-color: #530a1a !important;
 }
 
-/* a,
-a:link,
-a:active {
-  text-decoration: none;
-} */
-
-.brand {
-  color: white;
-  text-decoration: none;
-  margin-left: 0.5rem;
-  white-space: nowrap;
+.MuiMenuItem-root { /* Hamburger Menu Items */
+  color:  white !important;
 }
 
-.MuiPaper-root {
-  background-color: #6e091f !important;
+.MuiPaper-root a:hover {
+  /* color: #032d33 !important; */
+  background-color: #620b1e !important;
 }
 
-.navBarContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #6e091f;
-  min-height: 66px;
-  position: sticky;
-  top: 0;
-  /* width: 100vw; */
-  z-index: 2;
-  border-bottom: 5px solid #530a1a;
-}
-
-.navBar {
-  /* display: flex;
-  justify-content: space-between; */
-  /* align-items: center; */
-  position: fixed;
-  right: 10px;
-  margin-right: 0.7rem;
-  white-space: nowrap;
-}
-.hamburgerButton {
-  display: none;
-  margin-right: 2rem;
-  transform: scale(1.3);
-  border: 1px solid black;
-  border-radius: 5px;
-  background: #530a1a;
-}
-
-/* .button-top-scroll {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-} */
-
-.linkNav {
-  text-decoration: none;
-  color: white;
-  padding: 1rem;
-  /* transition: transform 1s;
-  transform: scale(0.8); */
-  font-size: 1.6rem;
-  border-radius: 5px;
-  cursor: pointer;
-  /* white-space: nowrap; */
-}
-
-.linkNav:hover {
-  background-color: #9e0c2b;
-  /* transform: scale(1); */
-  cursor: pointer;
+.brandName:hover {
+  background-color: none !important;
 }
 
 .search-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.4rem;
 }
 
 .search-bar {
+  padding: 0;
   width: 70%;
   border-radius: 5px;
   border: 1px solid #530a1a;
-  background-color: #9e0c2b;
+  background-color: #620b1e;
   color: white;
   height: 1.7rem;
   font-size: 1rem;
@@ -260,6 +182,18 @@ a:active {
   width: 100%;
 }
 
+@media only screen and (max-width: 430px) {
+  .search-box-DIV {
+    width: 160px;
+  }
+  .search-box {
+    justify-content: flex-end;
+  }
+  .search-bar:focus {
+    width: 80%;
+  }
+}
+
 .cardBox {
   min-height: 100%;
   width: 90%;
@@ -271,7 +205,6 @@ a:active {
 }
 
 .cardBox > div {
-  /* flex-basis: calc(30% - 200px); */
   flex-basis: 30%;
 }
 
@@ -287,53 +220,10 @@ a:active {
   border: 2px solid #03252b;
   border-radius: 0px 12px 0px 12px;
   margin: 1rem;
-  /* transform: scale(1);
-  transition: transform 2s; */
-  /* box-shadow: 6px 6px; */
-}
-
-/* Custom borders */
-/* .cardDesc::before {
-  content:'';
-  position: relative;
-  background-color: #6e091f;
-  width: 1.5rem;
-  height: 3px;
-  bottom: -113px;
-  right: 32px;
-  border-bottom:1px solid magenta; 
-}
-
-.cardDesc::after {
-  content:'';
-  position: relative;
-  background-color: #6e091f;
-  width: 3px;
-  height: 1.5rem;
-  bottom: -15px;
-  right: 32px;
 }
 
 
-.cardCharName::before {
-  
-  content:'';
-  position: absolute;
-  background-color: #6e091f;
-  width:  1.5rem;
-  height: 3px;
-  top: 5px;
-  left: 5px;
-}
-.cardCharName::after {
-  content:'';
-  position: absolute;
-  background-color: #6e091f;
-  width: 3px;
-  height:  1.5rem;
-  top: 5px;
-  left: 5px;
-} */
+
 /* Custom borders */
 
 .uniCard:hover > .cardCharImage {
@@ -364,8 +254,6 @@ a:active {
   margin-bottom: 10px;
   padding: 0px 0.5rem;
   max-height: 32px;
-  /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.1); */
   align-self: center;
 }
 .cardDesc {
@@ -374,7 +262,6 @@ a:active {
   padding: 0 0.5rem 1.5rem;
   margin-top: 20px;
   min-width: 210px;
-  /* box-shadow: 0px -24px 3px -24px white; */
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -384,38 +271,13 @@ a:active {
 
 .cardDesc > p {
   margin: 0.1rem;
-  /* border: 1px solid black;
-  border-radius: 10px 100px / 120px; */
 }
 
 .cardCharCrest {
   max-width: 6rem;
   margin: 0 auto;
-  /* max-height: 10rem; */
 }
 
-#hideButton {
-  visibility: hidden;
-}
-
-#showButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: #032d33;
-  border: 3px solid #6e091f;
-  border-radius: 12px;
-}
-
-#showButton:hover {
-  cursor: pointer;
-}
-/* 
-@media only screen and (max-height: 850px) {
-  .home-container {
-    height: 100vh;
-  }
-} */
 
 @media only screen and (max-width: 595px) {
   .credits {
@@ -435,66 +297,15 @@ a:active {
   }
 }
 
-@media only screen and (max-width: 950px) {
-  .linkNav {
-    font-size: 1.4rem;
+@media only screen and (max-width: 430px) {
+  .brandName {
+    font-size: 1rem !important;
   }
 }
 
-@media only screen and (max-width: 875px) {
-  .navBar {
-    display: none;
-  }
 
-  .hamburgerButton {
-    display: flex;
-    transform: scale(1.3);
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-
-  .linkNav {
-    padding: 0;
-    text-align: center;
-    padding: 0.5rem;
-    background-color: #9e0c2b;
-    border: 1px solid black;
-    font-size: 1.6rem;
-  }
-
-  #move {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 0.8rem;
-  }
-  /* #hideButton {
-    visibility: hidden;
-  } */
-
-  #hidden {
-    position: absolute;
-    top: 66px;
-    right: 7px;
-    height: auto;
-    width: 80px;
-    /* background-color: #6e091f; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 1rem;
-    z-index: 1;
-    /* border-bottom: 1px solid black; */
-    white-space: nowrap;
-  }
-}
 
 /*  HOUSES PAGES   */
-
-/* .container-container {
-  position: absolute;
-  top: 25%;
-  left: 10%;
-} */
 
 .houses-container {
   width: 100vw;

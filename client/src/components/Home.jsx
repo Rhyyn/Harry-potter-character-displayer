@@ -5,10 +5,6 @@ const Home = () => {
     <div className="home-container">
       <MainHeader />
       <h1 className="home-h1">Welcome to Harry Potter Character Displayer</h1>
-      {/* <img src={url} alt="harry" className="home-image" /> */}
-      {/* <p className="home-firstP">
-        Website to quickly look up names of characters of Harry Potter series
-      </p> */}
       <div className="credits-container">
         <h2 className="credits">Credits</h2>
         <p className="credits-desc">

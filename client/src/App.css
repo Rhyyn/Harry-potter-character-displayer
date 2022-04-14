@@ -13,6 +13,12 @@ header {
   display: unset;
 }
 
+a {
+  text-decoration: none;
+  background-color: none;
+  color: white;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
   cursor: pointer !important;
@@ -154,6 +160,29 @@ h1 {
 
 .brandName:hover {
   background-color: none !important;
+}
+
+.dropdownSubMenu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  text-align: left;
+  background-color: #620b1e;
+  border-radius: 12px;
+}
+
+.dropdownSubMenuList {
+  list-style: none;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+  margin: 0;
+}
+
+.dropdownSubMenuItems {
+  padding: 0.2rem;
+}
+.dropdownSubMenuItems:hover {
+  background-color: #530a1a;
+  border-radius: 8px;
 }
 
 .search-box {
@@ -309,76 +338,19 @@ h1 {
 
 .houses-container {
   width: 100vw;
-  height: calc(100vh - 73px);
+  height: calc(100vh - 56px);
   background-color: #032d33;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  overflow: hidden;
 }
 
 .houses:hover {
   cursor: pointer;
 }
 
-.gryffindor {
-  width: 25%;
-  height: calc(100% - 300px);
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.gryffindor-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  display: block;
-  width: 70%;
-}
-.slytherin-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  display: block;
-  width: 70%;
-}
-.hufflepuff-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  display: block;
-  width: 70%;
-}
-.ravenclaw-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  display: block;
-  width: 70%;
-}
-
-.slytherin {
-  width: 25%;
-  height: calc(100% - 300px);
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.hufflepuff {
-  width: 25%;
-  height: calc(100% - 300px);
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.ravenclaw {
-  width: 25%;
-  height: calc(100% - 300px);
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
 
 /* 
 @media only screen and (max-width: 450px) {

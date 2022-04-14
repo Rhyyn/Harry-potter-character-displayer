@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import { useState } from "react";
 
-
-const pages = ["Characters", "Houses", "Staff", "Students", "Contact"];
+const pages = ["Characters", "Houses", "Staff", "Students"];
 
 const MainHeader = (props) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [showHouseDrop, setShowHouseDrop] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -25,6 +25,11 @@ const MainHeader = (props) => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleHouseMenu = () => {
+    handleCloseNavMenu();
+    setShowHouseDrop(!showHouseDrop);
   };
 
   const search = () => {
@@ -107,7 +112,44 @@ const MainHeader = (props) => {
             HP Characters
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => {
+              if (page !== "Houses") {
+                return (
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                    component={Link}
+                    to={"/" + page.toLowerCase()}
+                  >
+                    {page}
+                  </Button>
+                );
+              } else if (page === "Houses") {
+                return (
+                  <Button
+                    key={page}
+                    onClick={handleHouseMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page}
+                    {showHouseDrop ? (
+                      <div className="dropdownSubMenu">
+                        <ul className="dropdownSubMenuList">
+                          <li className="dropdownSubMenuItems text-link"><Link to="/houses/gryffindor">Gryffindor</Link></li>
+                          <li className="dropdownSubMenuItems"><Link to="/houses/slytherin">Slytherin</Link></li>
+                          <li className="dropdownSubMenuItems"><Link to="/houses/ravenclaw">Ravenclaw</Link></li>
+                          <li className="dropdownSubMenuItems"><Link to="/houses/hufflepuff">Hufflepuff</Link></li>
+                        </ul>
+                      </div>
+                    ) : null}
+                  </Button>
+                );
+              } else {
+                return null;
+              }
+            })}
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -117,7 +159,7 @@ const MainHeader = (props) => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
           </Box>
           <div className="search-box-DIV">{search()}</div>
         </Toolbar>

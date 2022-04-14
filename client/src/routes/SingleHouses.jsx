@@ -11,7 +11,7 @@ const SingleHouses = (props) => {
   const handleChange = (e) => {
     setUserSearch(e.target.value);
   };
-
+  
   return (
     <div>
       <MainHeader handleChange={handleChange} value={userSearch}/>

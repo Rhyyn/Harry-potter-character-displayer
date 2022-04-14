@@ -36,7 +36,6 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="characters" element={<CharactersPage data={data}/>}></Route>
-        <Route path="houses" element={<Houses />}></Route>
         <Route path="/houses/:house" element={<SingleHouses data ={data}/>} />
         <Route path="students" element={<Students data={data} />}></Route>
         <Route path="Staff" element={<Staff data={data}/>}></Route>

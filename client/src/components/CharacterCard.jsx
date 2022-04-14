@@ -14,7 +14,8 @@ const CharacterCard = ({
   } else { // if not fallback to harrypoter Logo
     currentHouse = "hpLogo.png"
   }
-  let url = "./img/"
+  let url = "http://localhost:3000/img/"
+
 
   return (
     <div className="uniCard">

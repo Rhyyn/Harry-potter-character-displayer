@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./App.css";
-import Houses from "./routes/Houses";
+// import Houses from "./routes/Houses";
 import CharactersPage from "./routes/CharactersPage";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";

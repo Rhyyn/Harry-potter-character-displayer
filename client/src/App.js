@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom";
 import Students from "./routes/Students";
 import Staff from "./routes/Staff";
 import SingleHouses from "./routes/SingleHouses.jsx";
+import { createTheme, colors } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 
 function App() {
   const [data, setData] = useState(null);
@@ -30,17 +32,32 @@ function App() {
     fetchMyApi();
   }, []);
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: colors.deepPurple[500],
+      },
+      secondary: {
+        main: "#4e4351",
+      },
+    },
+  });
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="characters" element={<CharactersPage data={data}/>}></Route>
-        <Route path="/houses/:house" element={<SingleHouses data ={data}/>} />
-        <Route path="students" element={<Students data={data} />}></Route>
-        <Route path="Staff" element={<Staff data={data}/>}></Route>
-      </Routes>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route
+            path="characters"
+            element={<CharactersPage data={data} />}
+          ></Route>
+          <Route path="/houses/:house" element={<SingleHouses data={data} />} />
+          <Route path="students" element={<Students data={data} />}></Route>
+          <Route path="Staff" element={<Staff data={data} />}></Route>
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 

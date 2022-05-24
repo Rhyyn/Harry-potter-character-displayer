@@ -1,7 +1,8 @@
 body,
 html {
   margin: 0;
-  background-color: #530a1a;
+  /* background-color: #530a1a; */
+  background-color: #7b1fa2;
   font-family: "Roboto", sans-serif;
   cursor: default;
   /* height: 100%; */
@@ -66,7 +67,6 @@ a {
   background-position: center;
   height: 100vh;
 }
-
 
 .home-image {
   display: flex;
@@ -135,7 +135,6 @@ a {
   padding: 2rem 0 2rem;
 }
 
-
 h1 {
   font-size: 1.7rem;
   margin: 0;
@@ -145,12 +144,14 @@ h1 {
 }
 
 
-.MuiPaper-root {  /* Header background-color */
-  background-color: #530a1a !important;
-}
+/*  HEAD BG COLOR*/
+/* .MuiPaper-root {
+   background-color: #530a1a !important;
+} */
 
-.MuiMenuItem-root { /* Hamburger Menu Items */
-  color:  white !important;
+.MuiMenuItem-root {
+  /* Hamburger Menu Items */
+  color: white !important;
 }
 
 .MuiPaper-root a:hover {
@@ -233,16 +234,17 @@ h1 {
   justify-content: center;
 }
 
-.cardBox > div {
+
+/* .cardBox > div {
   flex-basis: 30%;
-}
+} */
 
 .uniCard {
   display: flex;
   flex-direction: column;
   color: white;
-  background-color: #032d33;
-  /* background-color: #6e091f; */
+  /* background-color: #032d33; */
+  /* background-color: #fff; */
   min-width: 17rem;
   max-width: 17rem;
   min-height: 330px;
@@ -251,15 +253,13 @@ h1 {
   margin: 1rem;
 }
 
-
-
 /* Custom borders */
 
-.uniCard:hover > .cardCharImage {
+/* .uniCard:hover > .cardCharImage {
   border: 5px solid #6e091f;
   background-color: #6e091f;
   padding: 0px;
-}
+} */
 
 .cardDesc::before {
   content: "";
@@ -307,7 +307,6 @@ h1 {
   margin: 0 auto;
 }
 
-
 @media only screen and (max-width: 595px) {
   .credits {
     font-size: 2.5rem;
@@ -332,8 +331,6 @@ h1 {
   }
 }
 
-
-
 /*  HOUSES PAGES   */
 
 .houses-container {
@@ -350,7 +347,6 @@ h1 {
 .houses:hover {
   cursor: pointer;
 }
-
 
 /* 
 @media only screen and (max-width: 450px) {

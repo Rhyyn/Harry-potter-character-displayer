@@ -33,7 +33,7 @@ const Home = () => {
                     </Box>
                 </Box>
                 <Box sx={{ width: "50%" }}>
-                    <img className="homeImage" src={castle} />
+                    <img className="homeImage" src={castle} alt="hogwarts castle" />
                 </Box>
             </Box>
         </section>

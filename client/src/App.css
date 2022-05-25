@@ -36,7 +36,12 @@ a {
 /*   CARD   */
 
 .cardCharName {
-  margin-bottom: 0;
+  margin: 0;
+  min-height: 60px;
+}
+
+.cardDesc {
+  margin-top: 1rem;
 }
 
 /* HAMBRUGER MENU */
@@ -102,6 +107,19 @@ a {
 
 .search-bar:focus {
   width: 100%;
+}
+
+/* HOME */
+
+.homeContainer {
+  overflow: hidden;
+}
+.homeTitle {
+  margin-top: 0;
+}
+
+.homeImage {
+  height: 100%;
 }
 
 @media only screen and (max-width: 430px) {

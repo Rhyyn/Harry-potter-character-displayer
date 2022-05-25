@@ -43,21 +43,20 @@ const MainHeader = (props) => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+      <Container maxWidth="xl" sx={{fontFamily: 'Montserrat'}}>
+        <Toolbar disableGutters >
           <Typography
             className="text-link brandName"
             variant="h6"
             noWrap
-            // component="div"
             component={Link}
             to="/"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            sx={{ mr: 2, display: { xs: "none", md: "flex" }, fontFamily: 'Montserrat' }}
           >
             HP Characters
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -87,8 +86,13 @@ const MainHeader = (props) => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  className="hamburgerContainer"
+                >
                   <Typography
+                    sx={{ color: "black", fontFamily: 'Montserrat' }}
                     className="text-link"
                     component={Link}
                     to={"/" + page}
@@ -100,11 +104,11 @@ const MainHeader = (props) => {
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant="h6"
             className="text-link brandName"
             noWrap
-            // component="div"
             component={Link}
             to="/"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
@@ -118,7 +122,7 @@ const MainHeader = (props) => {
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "white", display: "block", fontFamily: 'Montserrat' }}
                     component={Link}
                     to={"/" + page.toLowerCase()}
                   >
@@ -130,16 +134,24 @@ const MainHeader = (props) => {
                   <Button
                     key={page}
                     onClick={handleHouseMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "white", display: "block", fontFamily: 'Montserrat'  }}
                   >
                     {page}
                     {showHouseDrop ? (
                       <div className="dropdownSubMenu">
                         <ul className="dropdownSubMenuList">
-                          <li className="dropdownSubMenuItems text-link"><Link to="/houses/gryffindor">Gryffindor</Link></li>
-                          <li className="dropdownSubMenuItems"><Link to="/houses/slytherin">Slytherin</Link></li>
-                          <li className="dropdownSubMenuItems"><Link to="/houses/ravenclaw">Ravenclaw</Link></li>
-                          <li className="dropdownSubMenuItems"><Link to="/houses/hufflepuff">Hufflepuff</Link></li>
+                          <li className="dropdownSubMenuItems">
+                            <Link to="/houses/gryffindor">Gryffindor</Link>
+                          </li>
+                          <li className="dropdownSubMenuItems">
+                            <Link to="/houses/slytherin">Slytherin</Link>
+                          </li>
+                          <li className="dropdownSubMenuItems">
+                            <Link to="/houses/ravenclaw">Ravenclaw</Link>
+                          </li>
+                          <li className="dropdownSubMenuItems">
+                            <Link to="/houses/hufflepuff">Hufflepuff</Link>
+                          </li>
                         </ul>
                       </div>
                     ) : null}

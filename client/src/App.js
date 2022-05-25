@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     async function fetchMyApi() {
-      fetch("http://hp-api.herokuapp.com/api/characters")
+      fetch("https://hp-api.herokuapp.com/api/characters")
         .then((res) => {
           return res.json();
         })

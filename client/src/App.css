@@ -4,7 +4,12 @@ html {
   /* background-color: #530a1a; */
   font-family: "Roboto", sans-serif;
   cursor: default;
+  overflow-x: hidden;
   /* height: 100%; */
+}
+
+.App {
+  background-color: #fffade;
 }
 /* 
 header {
@@ -12,6 +17,7 @@ header {
   flex-direction: column;
   display: unset;
 }
+*/
 
 a {
   text-decoration: none;
@@ -19,31 +25,13 @@ a {
   color: white;
 }
 
-::-webkit-scrollbar {
-  width: 20px;
-  cursor: pointer !important;
-}
-
-::-webkit-scrollbar-track {
-  background: #530a1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  height: 90px;
-  border: 1px solid black;
-  border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #9e0c2b;
-  cursor: pointer !important;
-}
-::-webkit-scrollbar-corner {
-  color: #e5890a;
-} */
-
 
 .pageContainer {
   width: 100vw;
+}
+
+/*   CARD   */
+
+.cardCharName {
+  margin-bottom: 0;
 }

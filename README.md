@@ -4,7 +4,7 @@
   
   <h4>Built using React and MaterialUI</h4>
   
-[Live Demo](https://harry-potter-character-displayer.vercel.app/characters)
+[Live Demo](https://harry-potter-character-displayer.vercel.app)
 
 <h3>Displays various infos about the characters of Harry Potter</h3>
 <img src="https://i.imgur.com/yG5P3Hc.png" />

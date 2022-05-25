@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainHeader from "../components/MainHeader";
 import CharacterCard from "../components/CharacterCard";
+import { Box } from "@mui/material";
 
 const Staff = (props) => {
   const [userSearch, setUserSearch] = useState("");
@@ -11,8 +12,18 @@ const Staff = (props) => {
 
   return (
     <div>
-      <MainHeader handleChange={handleChange} value={userSearch}/>
-      <div className="cardBox">
+      <MainHeader handleChange={handleChange} value={userSearch} />
+      <Box
+        className="cardContainer"
+        sx={{
+          display: "flex",
+          width: "90%",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          margin: "0 auto",
+          flexBasis: "30%",
+        }}
+      >
         {props.data &&
           props.data
             .filter((item) => {
@@ -43,7 +54,7 @@ const Staff = (props) => {
                 charHouse={item.house}
               />
             ))}
-      </div>
+      </Box>
     </div>
   );
 };

@@ -40,6 +40,11 @@ function App() {
       secondary: {
         main: "#4e4351",
       },
+      typography: {
+        fontFamily: [
+          '"Montserrat"'
+        ]
+      }
     },
   });
   return (

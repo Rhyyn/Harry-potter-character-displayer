@@ -10,10 +10,21 @@ const CharactersPage = (props) => {
     setUserSearch(e.target.value);
   };
 
+
   return (
     <section className="pageContainer">
       <MainHeader handleChange={handleChange} value={setUserSearch} />
-      <Box className="cardContainer" sx={{display:"flex", width: "90%", flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto', flexBasis: '30%'}}>
+      <Box
+        className="cardContainer"
+        sx={{
+          display: "flex",
+          width: "90%",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          margin: "0 auto",
+          flexBasis: "30%",
+        }}
+      >
         {props.data &&
           props.data
             .filter((item) => {

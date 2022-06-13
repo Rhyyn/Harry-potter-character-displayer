@@ -14,12 +14,11 @@ const CharacterCard = ({
     let currentHouse = "";
     if (charHouse) {
         // check if character has a house
-        currentHouse = charHouse.toLowerCase() + ".png";
+        currentHouse = "/img/" + charHouse.toLowerCase() + ".png";
     } else {
         // if not fallback to harrypotter Logo
-        currentHouse = "hpLogo.png";
+        currentHouse = "/img/hpLogo.png";
     }
-    let url = "http://localhost:3000/img/";
 
     function titleCase(string) {
         return string[0].toUpperCase() + string.slice(1).toLowerCase(); // first letter to UpperCase
@@ -79,7 +78,7 @@ const CharacterCard = ({
                     <Box
                         component="img"
                         sx={{ maxWidth: "5rem", marginTop: "1rem"}}
-                        src={url + currentHouse}
+                        src={currentHouse}
                         alt="temp"
                     ></Box>
                 </div>

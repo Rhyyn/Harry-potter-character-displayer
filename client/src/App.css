@@ -112,16 +112,7 @@ a {
 
 /* HOME */
 
-.homeContainer {
-  overflow: hidden;
-}
-.homeTitle {
-  margin-top: 0;
-}
 
-.homeImage {
-  height: 100%;
-}
 
 @media only screen and (max-width: 430px) {
   .search-box-DIV {
